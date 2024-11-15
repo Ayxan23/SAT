@@ -1,0 +1,15 @@
+:root {
+  --main-color: #fbb603;
+  --white-text: white;
+  --grey-text: #4c4c4c;
+  --second-color: #ffedc9;
+}
+
+::placeholder {
+  color: #949494;
+}
+
+::selection {
+  color: white;
+  background: var(--main-color);
+}
