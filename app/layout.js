@@ -1,26 +1,24 @@
-import type { Metadata } from "next";
 import "@/styles/reset.css";
 import "@/styles/global.css";
 import "@/styles/variable.css";
 
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Header from "@/components/header/index";
 
 import { Poppins } from "next/font/google";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Sat.az",
   description: "sat.az",
 };
-
-type childType = { children: React.ReactNode };
 
 const popFont = Poppins({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
 });
 
-export default function RootLayout({ children }: childType) {
+export default function RootLayout({ children }) {
+
   return (
     <html lang="en" className={popFont.className}>
       <body className="container">

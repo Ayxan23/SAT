@@ -1,0 +1,148 @@
+.blogWrapper {
+  min-height: 80vh;
+}
+
+.blogBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.blogBlog {
+  box-shadow: var(--header-shadow);
+  border-radius: 16px;
+  border: 1px solid var(--blog-border);
+  background: var(--box-bg);
+}
+
+.blogLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.blogImage {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-bottom: 1px solid var(--blog-border);
+}
+
+.blogImage img {
+  object-fit: cover;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.blogText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 10px 12px 10px;
+  background: var(--box-bg);
+  border-radius: 0px 0px 16px 16px;
+}
+
+.blogText h3 {
+  color: var(--blog-title);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.blogText h4 {
+  background-color: var(--blog-box-bg);
+  color: var(--white-text);
+  padding: 5px 10px;
+  border-radius: 200px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+}
+
+.blogTextDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--blog-ex);
+  font-size: 14px;
+}
+
+.blogTextDetail p {
+  border: 1px solid var(--blog-ex);
+  border-radius: 5px;
+  padding: 0px 4px;
+}
+
+.blogBlog:hover {
+  box-shadow: var(--blog-shadow);
+}
+
+@media screen and (max-width: 1200px) {
+  .blogBox {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .blogImage {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .blogBox {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .blogImage {
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .blogBox {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px 0px;
+  }
+  .blogImage {
+    height: 160px;
+  }
+  .blogTextDetail {
+    gap: 5px;
+    font-size: 12px;
+  }
+  .blogText {
+    gap: 2px;
+    padding: 3px 5px 10px 5px;
+  }
+  .blogText h3 {
+    font-size: 16px;
+  }
+  .blogText h4 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .blogImage {
+    height: 120px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .blogText h3 {
+    font-size: 14px;
+  }
+
+  .blogText h4 {
+    padding: 1px 6px;
+    font-size: 14px;
+  }
+
+  .blogTextDetail {
+    font-size: 11px;
+  }
+}

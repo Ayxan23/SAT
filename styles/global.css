@@ -1,7 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  background-color: #ffffff;
+  background-color: var(--body-color);
 }
 
 div[data-nextjs-scroll-focus-boundary] {
@@ -11,7 +11,7 @@ div[data-nextjs-scroll-focus-boundary] {
 .container {
   display: grid;
   grid-template-columns: 1fr min(1440px, 94%) 1fr;
-  grid-template-rows: 74px 90vh 150px;
+  grid-template-rows: 74px auto 150px;
 }
 
 .container > * {
@@ -22,7 +22,7 @@ div[data-nextjs-scroll-focus-boundary] {
   grid-column: 1 / -1;
 }
 
-.test{
+.test {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,5 +30,5 @@ div[data-nextjs-scroll-focus-boundary] {
   height: 100%;
   font-weight: 700;
   color: rgb(161, 161, 161);
+  height: 90vh;
 }
-
