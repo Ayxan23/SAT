@@ -18,7 +18,6 @@ const popFont = Poppins({
 });
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en" className={popFont.className}>
       <body className="container">

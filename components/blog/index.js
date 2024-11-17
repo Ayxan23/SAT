@@ -1,17 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 import styles from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
 const Blog = ({ blogs }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className={styles.blogWrapper}>
       <div className={styles.blogBox}>
         {blogs.map((blog, i) => (
           <div key={i} className={styles.blogBlog}>
-            <Link className={styles.blogLink} href={`/${blog?.category}/${blog?.id}`}>
+            <Link
+              className={styles.blogLink}
+              href={`/${blog?.category}/${blog?.id}`}
+            >
               <div className={styles.blogImage}>
                 <Image
                   src={blog?.img}
@@ -19,7 +26,7 @@ const Blog = ({ blogs }) => {
                   fill
                   unoptimized
                   priority
-                  />
+                />
               </div>
               <div className={styles.blogText}>
                 <h3>{blog?.name}</h3>

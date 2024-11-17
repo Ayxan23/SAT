@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 
-import { IoClose, RxHamburgerMenu, IoPerson, IoSearch } from "@/icons";
 import { useRouter, usePathname } from "next/navigation";
 import styles from "./styles.module.css";
 
-import ThemeToggle from "@/components/theme-button";
+import HeaderWeb from "@/components/header/header-web/index";
+import HeaderMob from "@/components/header/header-mob/index";
+
 import az from "@/language/az.json";
 import ru from "@/language/ru.json";
 
@@ -14,11 +14,9 @@ const Header = () => {
   const [dynamicParam, setDynamicParam] = useState("");
   const [screenW, setScreenW] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
-
   const [language, setLanguage] = useState("az");
 
   const router = useRouter();
-
   let category = usePathname().split("/")[1].trim();
   if (!category) {
     category = "elanlar";
@@ -37,9 +35,9 @@ const Header = () => {
   }, []);
 
   const toggleLanguage = () => {
-    const newLanguage = language === "az" ? "ru" : "az";
-    setLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage);
+    const newLang = language === "az" ? "ru" : "az";
+    setLanguage(newLang);
+    localStorage.setItem("language", newLang);
   };
   const texts = language === "az" ? az : ru;
 
@@ -57,86 +55,25 @@ const Header = () => {
   return (
     <header className={`${styles.header} container fluid`}>
       {screenW ? (
-        <section className={`${styles.headerWrapper} headW`}>
-          <div className={styles.headerLogo}>
-            <Link href="/">sat.az</Link>
-          </div>
-
-          <div className={styles.headerSearch}>
-            <input
-              onChange={(e) => setDynamicParam(e.target.value)}
-              onKeyDown={(e) => onEnter(e)}
-              placeholder={texts.inputPlaceholder ?? "axtar"}
-            />
-            <div onClick={onSearch}>
-              <IoSearch size={28} />
-            </div>
-          </div>
-          <nav className={styles.headerNav}>
-            <Link href="#">{texts.category ?? "Kateqoriya"}</Link>
-            <Link href="#">
-              <div className={styles.personIcon}>
-                <IoPerson />
-              </div>
-              {texts.log ?? "Giriş"}
-            </Link>
-            <ThemeToggle />
-            <div className={styles.headerButton} onClick={toggleLanguage}>
-              {texts.button ?? "AZ"}
-            </div>
-          </nav>
-        </section>
+        <HeaderWeb
+          texts={texts}
+          onSearch={onSearch}
+          onEnter={onEnter}
+          toggleLanguage={toggleLanguage}
+          setDynamicParam={setDynamicParam}
+          language={language}
+        />
       ) : (
-        <section className={styles.headerWrapper}>
-          <div className={styles.mobBox}>
-            <div className={styles.headerLogo}>
-              <Link href="/">sat.az</Link>
-            </div>
-
-            <div className={styles.headerSearch}>
-              <input
-                onChange={(e) => setDynamicParam(e.target.value)}
-                placeholder={texts.inputPlaceholder ?? "axtar"}
-                onKeyDown={(e) => onEnter(e)}
-              />
-              <div onClick={onSearch}>
-                <IoSearch size={28} />
-              </div>
-            </div>
-
-            <div
-              className={styles.mobHam}
-              onClick={() => {
-                setIsVisible(!isVisible);
-                if (!isVisible) {
-                  document.body.style.overflow = "hidden";
-                } else {
-                  document.body.style.overflow = "";
-                }
-              }}
-            >
-              {isVisible ? <IoClose /> : <RxHamburgerMenu />}
-            </div>
-          </div>
-
-          <nav
-            className={styles.headerNav}
-            style={{ display: isVisible ? "flex" : "none" }}
-          >
-            <Link href="#">{texts.category ?? "Kateqoriya"}</Link>
-
-            <Link href="#">
-              <div className={styles.personIcon}>
-                <IoPerson />
-              </div>
-              {texts.log ?? "Giriş"}
-            </Link>
-            <ThemeToggle />
-            <div className={styles.headerButton} onClick={toggleLanguage}>
-              {texts.button ?? "AZ"}
-            </div>
-          </nav>
-        </section>
+        <HeaderMob
+          texts={texts}
+          onSearch={onSearch}
+          onEnter={onEnter}
+          toggleLanguage={toggleLanguage}
+          setDynamicParam={setDynamicParam}
+          isVisible={isVisible}
+          setIsVisible={setIsVisible}
+          language={language}
+        />
       )}
     </header>
   );

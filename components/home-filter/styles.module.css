@@ -1,0 +1,89 @@
+.filterWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white-text);
+  padding-top: 20px;
+}
+
+.filterWrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter p {
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid var(--white-text);
+  background: var(--main-color);
+  padding: 6px 10px;
+  user-select: none;
+}
+
+.filter p:hover {
+  color: var(--filter-text);
+  border: 2px solid var(--filter-box);
+  background: var(--filter-bg);
+}
+
+.filterStatic {
+  border: 2px solid var(--white-text);
+  border-radius: 12px;
+  background: var(--main-color);
+  padding: 8px 18px;
+  user-select: none;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 900px) {
+  .filterStatic {
+    padding: 6px 10px;
+  }
+  .filterWrapper {
+    gap: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filterStatic {
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+    background: none;
+    color: #fbb603;
+    user-select: none;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .filterWrapper {
+    gap: 5px;
+    flex-direction: column;
+    padding-top: 6px;
+  }
+  .filterWrapper div {
+    gap: 5px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .filter p {
+    padding: 8px 8px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 426px) {
+    .filter p {
+      padding: 4px 8px;
+    }
+  }

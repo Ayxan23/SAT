@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Nəqliyyat",
+    "ruName": "Транспорт",
+    "value": "neqliyyat"
+  },
+  {
+    "id": 2,
+    "name": "Elektronika",
+    "ruName": "Электроника",
+    "value": "elektronika"
+  },
+  {
+    "id": 3,
+    "name": "Ehtiyat hissələri və aksesuarlar",
+    "ruName": "Запасные части и аксессуары",
+    "value": "aksesuar"
+  },
+  {
+    "id": 4,
+    "name": "Ev və bağ üçün",
+    "ruName": "Для дома и сада",
+    "value": "ev"
+  },
+  {
+    "id": 5,
+    "name": "Daşınmaz əmlak",
+    "ruName": "Недвижимость",
+    "value": "emlak"
+  },
+  {
+    "id": 6,
+    "name": "Xidmətlər və biznes",
+    "ruName": "Услуги и бизнес",
+    "value": "biznes"
+  },
+  {
+    "id": 7,
+    "name": "Şəxsi əşyalar",
+    "ruName": "Личные вещи",
+    "value": "esyalar"
+  },
+  {
+    "id": 8,
+    "name": "Hobbi və asudə",
+    "ruName": "Хобби и досуг",
+    "value": "hobbi"
+  },
+  {
+    "id": 9,
+    "name": "Uşaq aləmi",
+    "ruName": "Детский мир",
+    "value": "usaqlar"
+  },
+  {
+    "id": 10,
+    "name": "Heyvanlar",
+    "ruName": "Животные",
+    "value": "heyvanlar"
+  },
+  {
+    "id": 11,
+    "name": "İş elanları",
+    "ruName": "Объявления о вакансиях",
+    "value": "is"
+  },
+  {
+    "id": 12,
+    "name": "Məktəblilər üçün",
+    "ruName": "Для школьников",
+    "value": "mekteb"
+  }
+]

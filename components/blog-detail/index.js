@@ -1,10 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 
 const Detail = ({ blog }) => {
   const [isLog, setIsLog] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className={styles.detailWrapper}>
@@ -23,7 +26,7 @@ const Detail = ({ blog }) => {
       <h4>{blog?.desc}</h4>
       <h5
         onClick={() => {
-            setIsLog(true)
+          setIsLog(true);
         }}
       >
         {isLog ? blog?.userTel : "SAT"}
