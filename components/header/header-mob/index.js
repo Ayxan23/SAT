@@ -18,7 +18,8 @@ const HeaderMob = ({
   const [isCategory, setIsCategory] = useState(false);
 
   return (
-    <section>
+    <section className={`${styles.headerSection} dtrue`}>
+      <div></div>
       <div className={styles.headerWrapper}>
         <div className={styles.mobBox}>
           <div className={styles.headerLogo}>
@@ -65,7 +66,12 @@ const HeaderMob = ({
             {texts.category ?? "Kateqoriya"}
           </div>
 
-          <Link href="#">
+          <Link
+            onClick={() => {
+              setIsVisible(false);
+            }}
+            href="/account/profil"
+          >
             <div className={styles.personIcon}>
               <IoPerson />
             </div>
@@ -98,6 +104,7 @@ const HeaderMob = ({
         </div>
         <div></div>
       </div>
+      <div></div>
     </section>
   );
 };

@@ -24,6 +24,7 @@
   background: var(--main-color);
   padding: 6px 10px;
   user-select: none;
+  color: var(--flt-p);
 }
 
 .filter p:hover {

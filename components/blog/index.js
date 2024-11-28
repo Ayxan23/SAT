@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
 const Blog = ({ blogs }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,6 +25,7 @@ const Blog = ({ blogs }) => {
                   fill
                   unoptimized
                   priority
+                  as="image"
                 />
               </div>
               <div className={styles.blogText}>

@@ -32,3 +32,20 @@ div[data-nextjs-scroll-focus-boundary] {
   color: rgb(161, 161, 161);
   height: 90vh;
 }
+
+.dfalse {
+  display: grid !important;
+}
+
+.dtrue {
+  display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .dfalse {
+    display: none !important;
+  }
+  .dtrue {
+    display: grid !important;
+  }
+}

@@ -1,10 +1,27 @@
 .header {
   background: var(--main-color);
+}
+/* .header {
+  background: var(--main-color);
   position: sticky;
   z-index: 3;
   user-select: none;
   top: 0px;
   border-bottom: 1px solid var(--header-border);
+} */
+
+.headerSection {
+  display: grid;
+  grid-template-columns: 1fr min(1440px, 94%) 1fr;
+  height: 74px;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  user-select: none;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid var(--header-border);
+  background: var(--main-color);
 }
 
 .headerWrapper {
@@ -21,6 +38,7 @@
   grid-template-columns: 1fr min(1440px, 94%) 1fr;
   background-color: var(--second-color);
   width: 100%;
+  top: 74px;
   left: 0;
   padding: 20px 0px;
   z-index: 5;

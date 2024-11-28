@@ -1,0 +1,36 @@
+.accHead {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .accHead {
+    display: grid;
+    grid-template-columns: 1fr min(1440px, 94%) 1fr;
+    align-items: center;
+    height: 65px;
+    position: fixed;
+    top: 74px;
+    z-index: 2;
+    background: var(--acc-burger);
+    width: 100%;
+    border-bottom: 1px solid var(--acc-bg-border);
+  }
+
+  .accNavButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: var(--acc-burger-bg);
+    color: var(--grey-text);
+    border: 1px solid var(--acc-burger-br);
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px 12px;
+  }
+  .accNavButton:hover {
+    background-color: var(--hedar-hover-bg);
+    color: var(--header-hover-tx);
+    box-shadow: var(--header-shadow);
+  }
+}

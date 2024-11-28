@@ -16,7 +16,8 @@ const HeaderWeb = ({
   const [isCategory, setIsCategory] = useState(false);
 
   return (
-    <section>
+    <section className={`${styles.headerSection} dfalse`}>
+      <div></div>
       <div className={styles.headerWrapper}>
         <div className={styles.headerLogo}>
           <Link href="/">sat.az</Link>
@@ -41,7 +42,7 @@ const HeaderWeb = ({
           >
             {texts.category ?? "Kateqoriya"}
           </div>
-          <Link href="#">
+          <Link href="/account/profil">
             <div className={styles.personIcon}>
               <IoPerson />
             </div>
@@ -71,6 +72,7 @@ const HeaderWeb = ({
         </div>
         <div></div>
       </div>
+      <div></div>
     </section>
   );
 };
