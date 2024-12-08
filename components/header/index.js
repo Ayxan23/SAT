@@ -14,7 +14,6 @@ import MainContext from "@/context/MainContext";
 const Header = () => {
   const [dynamicParam, setDynamicParam] = useState("");
   const [isVisible, setIsVisible] = useState(false);
-  // const [screenW, setScreenW] = useState(true);
 
   let { language, setLanguage } = useContext(MainContext);
 
@@ -30,14 +29,6 @@ const Header = () => {
       setLanguage(savedLanguage);
     }
   });
-
-  // useEffect(() => {
-  //   const setRes = () => setScreenW(window.innerWidth >= 900);
-  //   setRes();
-  //   window.removeEventListener("resize", setRes);
-  //   window.addEventListener("resize", setRes);
-  //   return () => window.removeEventListener("resize", setRes);
-  // }, []);
 
   const toggleLanguage = () => {
     const newLang = language === "az" ? "ru" : "az";
@@ -59,7 +50,6 @@ const Header = () => {
 
   return (
     <header className={`${styles.header} container fluid`}>
-      {/* {screenW ? ( */}
       <HeaderWeb
         texts={texts}
         onSearch={onSearch}
@@ -68,7 +58,6 @@ const Header = () => {
         setDynamicParam={setDynamicParam}
         language={language}
       />
-      {/* ) : ( */}
       <HeaderMob
         texts={texts}
         onSearch={onSearch}
@@ -79,7 +68,6 @@ const Header = () => {
         setIsVisible={setIsVisible}
         language={language}
       />
-      {/* )} */}
     </header>
   );
 };

@@ -1,0 +1,130 @@
+.loginWrapper {
+  background: linear-gradient(0deg, #2a1e00 0%, #fbb603 100%);
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.loginBox {
+  background-color: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.loginBox h2 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fbb603;
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.loginForm div {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm div label {
+  font-weight: 500;
+  margin-bottom: 3px;
+  margin-left: 5px;
+  margin-top: 10px;
+  color: #4c4c4c;
+}
+
+.loginForm div input {
+  color: #4c4c4c;
+  background-color: white;
+  border: 1px solid #b4b4b4;
+  padding: 8px 15px;
+  border-radius: 8px;
+  outline: none !important;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.loginForm div input:focus {
+  outline: none !important;
+  border-color: #fbb603 !important;
+  background-color: #fff9ed !important;
+}
+
+.loginForm div span {
+  text-align: center;
+  color: red;
+  margin-top: 2px;
+}
+
+.loginForm button {
+  color: white;
+  background-color: #fbb603;
+  border: 2px solid #fbb603;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.loginForm button:hover {
+  color: #fbb603;
+  background-color: #fffaf0;
+}
+
+.loginLink {
+  margin-top: 5px;
+  color: #353535;
+  text-align: center;
+}
+
+.loginLink a {
+  align-self: flex-end;
+  color: #e0a100;
+  padding: 2px;
+}
+.loginLink a:hover {
+  color: #fbb603;
+}
+
+.redBorder {
+  border-color: red !important;
+}
+
+.loginForm div p {
+  color: #00ad4e;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .loginBox {
+    padding: 20px;
+    margin-top: 100px;
+  }
+  .loginWrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  .loginBox h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+}

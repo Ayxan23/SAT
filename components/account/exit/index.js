@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import styles from "./styles.module.css";
@@ -15,7 +16,13 @@ const AccountExit = () => {
           <GoHome size={22} />
           Əsas Səhifə
         </Link>
-        <Link href={"/"}>
+        <Link
+          onClick={() => {
+            document.cookie =
+              "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          }}
+          href={"/"}
+        >
           <IoMdExit size={22} />
           Hesabdan Çıx
         </Link>

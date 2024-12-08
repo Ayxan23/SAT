@@ -34,6 +34,7 @@
 }
 
 .filterStatic {
+  color: var(--flt-p);
   border: 2px solid var(--white-text);
   border-radius: 12px;
   background: var(--main-color);
@@ -84,7 +85,7 @@
 }
 
 @media screen and (max-width: 426px) {
-    .filter p {
-      padding: 4px 8px;
-    }
+  .filter p {
+    padding: 4px 8px;
   }
+}

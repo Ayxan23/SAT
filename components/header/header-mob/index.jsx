@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { IoClose, RxHamburgerMenu, IoPerson, IoSearch } from "@/icons";
@@ -28,11 +29,14 @@ const HeaderMob = ({
 
           <div className={styles.headerSearch}>
             <input
-              onChange={(e) => setDynamicParam(e.target.value)}
+              type="text"
+              autoComplete="off"
+              name="search"
               placeholder={texts.inputPlaceholder ?? "axtar"}
+              onChange={(e) => setDynamicParam(e.target.value)}
               onKeyDown={(e) => onEnter(e)}
             />
-            <div onClick={onSearch}>
+            <div onClick={() => onSearch()}>
               <IoSearch size={28} />
             </div>
           </div>
@@ -42,11 +46,6 @@ const HeaderMob = ({
             onClick={() => {
               setIsVisible(!isVisible);
               setIsCategory(false);
-              // if (!isVisible) {
-              //   document.body.style.overflow = "hidden";
-              // } else {
-              //   document.body.style.overflow = "";
-              // }
             }}
           >
             {isVisible ? <IoClose /> : <RxHamburgerMenu />}

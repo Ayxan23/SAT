@@ -1,9 +1,11 @@
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { IoPerson, IoSearch } from "@/icons";
 import ThemeToggle from "@/components/theme-button";
 import styles from "../styles.module.css";
 import Categs from "@/mocks/categ.json";
+// import { useAuth } from "@/hooks/useAuth";
 
 const HeaderWeb = ({
   texts,
@@ -13,6 +15,8 @@ const HeaderWeb = ({
   setDynamicParam,
   language,
 }) => {
+  // let auth = useAuth();
+  // console.log(auth);
   const [isCategory, setIsCategory] = useState(false);
 
   return (
@@ -25,11 +29,14 @@ const HeaderWeb = ({
 
         <div className={styles.headerSearch}>
           <input
+            type="text"
+            autoComplete="off"
+            name="search"
             onChange={(e) => setDynamicParam(e.target.value)}
             onKeyDown={(e) => onEnter(e)}
             placeholder={texts.inputPlaceholder ?? "axtar"}
           />
-          <div onClick={onSearch}>
+          <div onClick={() => onSearch()}>
             <IoSearch size={28} />
           </div>
         </div>

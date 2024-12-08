@@ -8,7 +8,6 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
   firstName: yup.string().required("Ad zorunludur."),
-  lastName: yup.string().required("Soyad zorunludur."),
   email: yup
     .string()
     .email("Geçerli bir e-mail giriniz.")
@@ -50,13 +49,7 @@ const AccountProfil = () => {
           )}
         </div>
 
-        <div>
-          <label>Soyad:</label>
-          <input type="text" {...register("lastName")} />
-          {errors.lastName && (
-            <p>{errors.lastName.message}</p>
-          )}
-        </div>
+  
 
         <div>
           <label>E-mail:</label>
