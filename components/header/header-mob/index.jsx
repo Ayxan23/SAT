@@ -24,7 +24,7 @@ const HeaderMob = ({
       <div className={styles.headerWrapper}>
         <div className={styles.mobBox}>
           <div className={styles.headerLogo}>
-            <Link href="/">sat.az</Link>
+            <Link href="/">alsat</Link>
           </div>
 
           <div className={styles.headerSearch}>

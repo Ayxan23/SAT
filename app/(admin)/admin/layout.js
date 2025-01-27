@@ -1,19 +1,19 @@
 "use client";
 import React, { useState } from "react";
-import AccountPage from "@/components/account/account-nav/index";
-import AccountNav from "@/components/account/account-burger/index";
-import styles from "@/components/account/account-nav/styles.module.css";
+import AdminPage from "@/components/admin/admin-nav/index";
+import AdminNav from "@/components/admin/admin-burger/index";
+import styles from "@/components/admin/admin-nav/styles.module.css";
 
-const AccountLayout = ({ children }) => {
+const AdminLayout = ({ children }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
     <section className={styles.accWrapper}>
-      <AccountNav setIsVisible={setIsVisible} isVisible={isVisible}/>
-      <AccountPage setIsVisible={setIsVisible} isVisible={isVisible} />
+      <AdminNav setIsVisible={setIsVisible} isVisible={isVisible} />
+      <AdminPage setIsVisible={setIsVisible} isVisible={isVisible} />
       <div className={styles.sideTwo}>{children}</div>
     </section>
   );
 };
 
-export default AccountLayout;
+export default AdminLayout;

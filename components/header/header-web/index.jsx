@@ -24,7 +24,7 @@ const HeaderWeb = ({
       <div></div>
       <div className={styles.headerWrapper}>
         <div className={styles.headerLogo}>
-          <Link href="/">sat.az</Link>
+          <Link href="/admin/panel">alsat</Link>
         </div>
 
         <div className={styles.headerSearch}>

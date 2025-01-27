@@ -22,7 +22,7 @@ const popFont = Poppins({
 
 export default function RootLayout({ children }) {
   useEffect(() => {
-    document.title = "Sat.az";
+    document.title = "Alsat";
   }, []);
 
   const [language, setLanguage] = useState("az");

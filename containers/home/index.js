@@ -8,18 +8,57 @@ import { useState, useEffect } from "react";
 const HomeContainer = ({ search, category }) => {
   const [listings, setListings] = useState(Blogs);
 
+  function normalizeText(text) {
+    const charMap = {
+      Ə: "E",
+      ə: "e",
+      Ş: "S",
+      ş: "s",
+      Ç: "C",
+      Ç: "c",
+      Ö: "O",
+      ö: "o",
+      Ü: "U",
+      ü: "u",
+      Ğ: "G",
+      ğ: "g",
+      İ: "I",
+      i: "i",
+      I: "I",
+      ı: "i",
+    };
+
+    let result = text.replace(
+      /[ƏəŞşÇçÖöÜüĞğİiIı]/g,
+      (match) => charMap[match] || match
+    );
+
+    console.log("cavab", result);
+    return result;
+  }
+
   useEffect(() => {
     let findBlog = Blogs;
+    let searchNorm = false;
+    if (search) {
+      searchNorm = normalizeText(search.toString());
+    }
 
-    if (category && search && category != "elanlar" && category != "") {
+    if (
+      category &&
+      searchNorm &&
+      category != "elanlar" &&
+      category != "" &&
+      category != "admin"
+    ) {
       findBlog = Blogs.filter(
         (blog) =>
-          blog.name.toLowerCase().includes(search.toLowerCase()) &&
+          blog.name.toLowerCase().includes(searchNorm.toLowerCase()) &&
           blog.category.toLowerCase().includes(category.toLowerCase())
       );
-    } else if (search) {
+    } else if (searchNorm) {
       findBlog = Blogs.filter((blog) =>
-        blog.name.toLowerCase().includes(search.toLowerCase())
+        blog.name.toLowerCase().includes(searchNorm.toLowerCase())
       );
     } else if (category) {
       findBlog = Blogs.filter((blog) =>

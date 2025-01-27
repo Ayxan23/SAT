@@ -1,8 +1,12 @@
 import React from "react";
-import AccountExit from "@/components/account/exit";
+import AdminPanel from "@/components/admin/panel";
 
-const AccExit = () => {
-  return <div><AccountExit/></div>;
+const AdmPanel = () => {
+  return (
+    <div>
+      <AdminPanel />
+    </div>
+  );
 };
 
-export default AccExit;
+export default AdmPanel;

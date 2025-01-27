@@ -1,8 +1,8 @@
 import React from "react";
-import AccountProfil from "@/components/account/profil";
+import AdminDel from "@/components/admin/delt";
 
-const AccProfil = () => {
-  return <AccountProfil />;
+const AdmDel = () => {
+  return <AdminDel />;
 };
 
-export default AccProfil;
+export default AdmDel;

@@ -8,14 +8,13 @@ const Home = async ({ params, searchParams }) => {
   const { search } = await searchParams;
 
   const findCateg = Categs.find((categ) => categ.value == category);
-  if (!findCateg) {
+  if (!findCateg && category != "elanlar" && category != "admin") {
     notFound();
   }
 
   return (
     <div>
       <HomeContainer search={search} category={category} />
-      salam
     </div>
   );
 };

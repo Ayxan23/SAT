@@ -1,12 +1,12 @@
 import React from "react";
-import AccountAdd from "@/components/account/add";
+import AdminEdit from "@/components/admin/edit";
 
-const AccAdd = () => {
+const AdmEdit = () => {
   return (
     <div>
-      <AccountAdd />
+      <AdminEdit />
     </div>
   );
 };
 
-export default AccAdd;
+export default AdmEdit;

@@ -1,12 +1,12 @@
 import React from "react";
-import AccountElanlar from "@/components/account/elanlar";
+import AdminVerify from "@/components/admin/verify";
 
-const AccElanlar = () => {
+const AdmVerify = () => {
   return (
     <div>
-      <AccountElanlar />
+      <AdminVerify />
     </div>
   );
 };
 
-export default AccElanlar;
+export default AdmVerify;
